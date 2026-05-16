@@ -47,7 +47,7 @@ export default function Sidebar() {
   return (
     <aside style={{
       width: 'var(--sidebar-w)',
-      backgroundColor: 'var(--bg-sidebar)',
+      backgroundColor: 'var(--sidebar-bg)',
       color: 'white',
       display: 'flex',
       flexDirection: 'column',
