@@ -7,13 +7,13 @@
   --c-primary-dark:  #930001;
   --c-primary-bg:    #fff1f1;
 
-  --c-bg:            #f8fafc;
+  --c-bg:            #ffffff;
   --c-surface:       #ffffff;
-  --c-surface-low:   #f1f5f9;
-  --c-surface-container: #e9eef5;
+  --c-surface-low:   #f8fafc;
+  --c-surface-container: #f1f5f9;
 
-  --c-on-surface:    #0f172a;
-  --c-on-variant:    #64748b;
+  --c-on-surface:    #000000;
+  --c-on-variant:    #475569;
   --c-outline:       #94a3b8;
   --c-outline-variant: #e2e8f0;
 
@@ -42,6 +42,20 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,.1);
   --shadow-lg: 0 16px 40px rgba(0,0,0,.12);
   --shadow-panel: -8px 0 32px rgba(0,0,0,.12);
+
+  /* Aliases for compatibility */
+  --bg-main: var(--c-bg);
+  --bg-surface: var(--c-surface);
+  --text-main: var(--c-on-surface);
+  --text-muted: var(--c-on-variant);
+  --border: var(--c-outline-variant);
+  --primary: var(--c-primary);
+  --accent: var(--c-warning);
+  --error: var(--c-error);
+  --success: var(--c-success);
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
 }
 
 /* ── Reset ───────────────────────────────────────────────── */
