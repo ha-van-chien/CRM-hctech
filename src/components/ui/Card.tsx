@@ -1,15 +1,20 @@
 import React from 'react';
 
-export const Card = ({ children, className = '', title, subtitle }: { children: React.ReactNode, className?: string, title?: string, subtitle?: string }) => {
+export const Card = ({ children, className = '', title, subtitle, style = {}, onClick }: { children: React.ReactNode, className?: string, title?: string, subtitle?: string, style?: React.CSSProperties, onClick?: () => void }) => {
   return (
-    <div className="card-premium" style={{ 
-      backgroundColor: 'var(--surface)',
-      border: '1px solid var(--border)',
-      borderRadius: 'var(--radius-lg)',
-      padding: '1.5rem',
-      boxShadow: 'var(--shadow-sm)',
-      ... (className ? {} : {}) // placeholder for extension
-    }}>
+    <div 
+      className={`card-premium ${className}`}
+      onClick={onClick}
+      style={{ 
+        backgroundColor: 'var(--surface)',
+        border: '1px solid var(--border)',
+        borderRadius: 'var(--radius-lg)',
+        padding: '1.5rem',
+        boxShadow: 'var(--shadow-sm)',
+        cursor: onClick ? 'pointer' : 'default',
+        ...style
+      }}
+    >
       {title && (
         <div style={{ marginBottom: '1.25rem' }}>
           <h3 style={{ fontSize: '1.125rem', fontWeight: 600 }}>{title}</h3>

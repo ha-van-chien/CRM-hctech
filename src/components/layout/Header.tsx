@@ -147,7 +147,7 @@ export default function Header({ pathname }: { pathname: string }) {
               </div>
               {NOTIFS.map((n, i) => (
                 <div key={i} className="notif-item" onClick={() => setNotifOpen(false)}>
-                  <div className="notif-item-dot" style={{ background: n.color, background: n.bg, width: 32, height: 32, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <div className="notif-item-dot" style={{ backgroundColor: n.bg, width: 32, height: 32, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <span className="material-symbols-outlined icon-sm icon-fill" style={{ color: n.color }}>{n.icon}</span>
                   </div>
                   <div>

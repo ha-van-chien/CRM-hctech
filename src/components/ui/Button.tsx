@@ -31,7 +31,7 @@ export const Button = ({
   };
 
   // Inline fallback styles since we are avoiding Tailwind for core but using it as reference
-  const style: React.CSSProperties = {
+  const internalStyle: React.CSSProperties = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -52,7 +52,7 @@ export const Button = ({
   };
 
   return (
-    <button style={style} {...props}>
+    <button style={{ ...internalStyle, ...(props.style || {}) }} {...props}>
       {isLoading ? (
         <span style={{ marginRight: '8px', animation: 'spin 1s linear infinite' }}>↻</span>
       ) : null}
