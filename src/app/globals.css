@@ -119,11 +119,11 @@ ul { list-style: none; }
 .sidebar-logo-sub { font-size:10px; color:rgba(255,255,255,.45); font-weight:500; letter-spacing:.06em; text-transform:uppercase; }
 
 .sidebar-nav { flex:1; padding:12px 10px; display:flex; flex-direction:column; gap:2px; }
-.nav-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.35); padding:8px 8px 4px; margin-top:8px; }
+.nav-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.7); padding:8px 8px 4px; margin-top:8px; }
 .nav-item {
   display:flex; align-items:center; gap:10px;
   padding:9px 10px; border-radius:var(--r-md);
-  color:rgba(255,255,255,.6); font-size:13px; font-weight:500;
+  color:rgba(255,255,255,.9); font-size:13px; font-weight:500;
   transition:all .15s; cursor:pointer; position:relative;
   text-decoration:none;
 }

@@ -29,8 +29,8 @@ export default function Sidebar() {
           gap: '1rem',
           padding: '0.875rem 1.25rem',
           borderRadius: 'var(--radius-md)',
-          backgroundColor: isActive ? 'rgba(255,255,255,0.08)' : 'transparent',
-          color: isActive ? 'white' : 'rgba(255,255,255,0.6)',
+          backgroundColor: isActive ? 'rgba(255,255,255,0.12)' : 'transparent',
+          color: isActive ? 'white' : 'rgba(255,255,255,0.85)',
           fontWeight: isActive ? 600 : 500,
           fontSize: '0.9375rem',
           transition: 'all 0.2s ease',
@@ -76,10 +76,10 @@ export default function Sidebar() {
       </div>
 
       <div style={{ flex: 1, padding: '0 1rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-        <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', padding: '1rem 1.25rem' }}>Menu chính</p>
+        <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', padding: '1rem 1.25rem' }}>Menu chính</p>
         {navItems.map(renderLink)}
         
-        <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', padding: '2rem 1.25rem 1rem' }}>Cài đặt & Quản trị</p>
+        <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', padding: '2rem 1.25rem 1rem' }}>Cài đặt & Quản trị</p>
         {adminItems.map(renderLink)}
       </div>
 
@@ -92,7 +92,7 @@ export default function Sidebar() {
             gap: '1rem',
             padding: '1rem 1.25rem',
             borderRadius: 'var(--radius-md)',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'rgba(255,255,255,0.8)',
             fontSize: '0.875rem',
             fontWeight: 500,
             transition: 'all 0.2s ease'
