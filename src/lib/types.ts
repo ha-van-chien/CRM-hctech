@@ -96,11 +96,14 @@ export interface Opportunity {
   createdAt: string;
 }
 
+export type TaskPriority = "low" | "medium" | "high";
+
 export interface Task {
   id: string;
   title: string;
   type: TaskType;
   status: TaskStatus;
+  priority: TaskPriority;
   customerId: string | null;
   customerName: string | null;
   opportunityId: string | null;
@@ -108,5 +111,14 @@ export interface Task {
   assigneeId: string;
   dueDate: string;
   notes: string;
+  createdAt: string;
+}
+
+export interface CustomerList {
+  id: string;
+  name: string;
+  description: string;
+  customerIds: string[];
+  ownerId: string;
   createdAt: string;
 }

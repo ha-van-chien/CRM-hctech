@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* ── Design System Variables ──────────────────────────────── */
 :root {
-  --c-primary:       #bc0001;
-  --c-primary-dark:  #930001;
-  --c-primary-bg:    #fff1f1;
+  --c-primary:       #C89A3D; /* Accent color from design brief */
+  --c-primary-dark:  #b38a36;
+  --c-primary-bg:    #fdf9f1;
 
   --c-bg:            #ffffff;
   --c-surface:       #ffffff;
@@ -29,7 +32,7 @@
   --c-purple:        #7c3aed;
   --c-purple-bg:     #ede9fe;
 
-  --sidebar-bg:      #0f172a;
+  --sidebar-bg:      #1E40AF; /* Dark blue from brief */
   --sidebar-w:       260px;
   --header-h:        64px;
 

@@ -1,6 +1,7 @@
 "use client";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import { AppProvider } from "@/context/AppContext";
 
 export default function DashboardLayout({
   children,
@@ -8,14 +9,16 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
-      <Sidebar />
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-main)' }}>
-        <Header />
-        <main style={{ padding: '2rem 2.5rem', flex: 1 }} className="animate-fade-in">
-          {children}
-        </main>
+    <AppProvider>
+      <div className="flex min-h-screen bg-slate-50">
+        <Sidebar />
+        <div className="flex-1 flex flex-col min-w-0">
+          <Header />
+          <main className="flex-1 p-8 overflow-y-auto animate-fade-in">
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
+    </AppProvider>
   );
 }

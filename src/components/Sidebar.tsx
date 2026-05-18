@@ -8,13 +8,14 @@ export default function Sidebar() {
 
   const navItems = [
     { name: 'Tổng quan', href: '/', icon: Icons.dashboard },
-    { name: 'Khách hàng', href: '/customers', icon: Icons.users },
-    { name: 'Cơ hội (Pipeline)', href: '/pipeline', icon: Icons.kanban },
+    { name: 'Cơ hội bán hàng', href: '/pipeline', icon: Icons.kanban },
     { name: 'Công việc', href: '/tasks', icon: Icons.checkSquare },
+    { name: 'Danh sách khách hàng', href: '/customers', icon: Icons.users },
   ];
 
   const adminItems = [
-    { name: 'Quản trị hệ thống', href: '/admin', icon: Icons.settings },
+    { name: 'Thanh toán', href: '/billing', icon: Icons.pieChart },
+    { name: 'Cài đặt hệ thống', href: '/settings', icon: Icons.settings },
   ];
 
   const renderLink = (item: any) => {
@@ -23,93 +24,51 @@ export default function Sidebar() {
       <Link 
         key={item.href} 
         href={item.href}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '1rem',
-          padding: '0.875rem 1.25rem',
-          borderRadius: 'var(--radius-md)',
-          backgroundColor: isActive ? 'rgba(255,255,255,0.12)' : 'transparent',
-          color: isActive ? 'white' : 'rgba(255,255,255,0.85)',
-          fontWeight: isActive ? 600 : 500,
-          fontSize: '0.9375rem',
-          transition: 'all 0.2s ease',
-          borderLeft: isActive ? '3px solid var(--accent)' : '3px solid transparent',
-        }}
-        className="sidebar-link"
+        className={`flex items-center gap-4 px-5 py-3.5 rounded-xl text-sm transition-all duration-200
+          ${isActive 
+            ? 'bg-white/10 text-white font-semibold border-l-4 border-accent' 
+            : 'text-white/70 font-medium border-l-4 border-transparent hover:bg-white/5 hover:text-white'
+          }`}
       >
-        <span style={{ color: isActive ? 'var(--accent)' : 'inherit' }}>{item.icon()}</span>
+        <span className={`${isActive ? 'text-accent' : 'text-current'}`}>
+          {item.icon()}
+        </span>
         {item.name}
       </Link>
     );
   };
 
   return (
-    <aside style={{
-      width: 'var(--sidebar-w)',
-      backgroundColor: 'var(--sidebar-bg)',
-      color: 'white',
-      display: 'flex',
-      flexDirection: 'column',
-      height: '100vh',
-      position: 'sticky',
-      top: 0,
-      zIndex: 50,
-      boxShadow: '4px 0 20px rgba(0,0,0,0.1)'
-    }}>
-      <div style={{
-        padding: '2rem 1.5rem',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.75rem',
-        marginBottom: '1rem'
-      }}>
-        <div style={{ 
-          width: '32px', height: '32px', backgroundColor: 'var(--accent)', 
-          borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' 
-        }}>
+    <aside className="w-[260px] bg-dark text-white flex flex-col h-screen sticky top-0 z-50 shadow-2xl shrink-0">
+      {/* Logo Area */}
+      <div className="p-6 flex items-center gap-3 mb-2">
+        <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-lg">
           <Icons.logo />
         </div>
-        <span style={{ fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.04em', fontFamily: 'var(--font-heading)' }}>
-          HCTECH <span style={{ color: 'var(--accent)' }}>CRM</span>
+        <span className="text-xl font-bold tracking-tight">
+          HCTECH <span className="text-accent">CRM</span>
         </span>
       </div>
 
-      <div style={{ flex: 1, padding: '0 1rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-        <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', padding: '1rem 1.25rem' }}>Menu chính</p>
+      {/* Navigation */}
+      <div className="flex-1 px-4 flex flex-col gap-1 overflow-y-auto">
+        <p className="text-[10px] font-bold uppercase tracking-wider text-white/50 px-5 pt-4 pb-2">Menu chính</p>
         {navItems.map(renderLink)}
         
-        <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', padding: '2rem 1.25rem 1rem' }}>Cài đặt & Quản trị</p>
+        <p className="text-[10px] font-bold uppercase tracking-wider text-white/50 px-5 pt-8 pb-2">Quản trị viên</p>
         {adminItems.map(renderLink)}
       </div>
 
-      <div style={{ padding: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      {/* Footer / Logout */}
+      <div className="p-6 border-t border-white/10">
         <Link 
           href="/login"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            padding: '1rem 1.25rem',
-            borderRadius: 'var(--radius-md)',
-            color: 'rgba(255,255,255,0.8)',
-            fontSize: '0.875rem',
-            fontWeight: 500,
-            transition: 'all 0.2s ease'
-          }}
-          className="sidebar-link"
+          className="flex items-center gap-4 px-5 py-3 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 hover:text-white transition-all duration-200"
         >
           <Icons.logout />
           Đăng xuất
         </Link>
       </div>
-
-      <style jsx>{`
-        :global(.sidebar-link):hover {
-          background-color: rgba(255,255,255,0.05) !important;
-          color: white !important;
-        }
-      `}</style>
     </aside>
   );
 }
